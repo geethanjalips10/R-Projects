@@ -33,7 +33,7 @@ activity             - Identifies the particular activity performed by the subje
                        The values are WALKING,WALKING_UPSTAIRS,WALKING_DOWNSTAIRS,SITTING,STANDING,LAYING.  
                        
 subjectID            - Identifies the subject who performed the particular activity for the measurement taken. 
-                       The subjectid   takes values from 1 to 30
+                       The subjectid   takes numeric values from 1 to 30
                        
 ####Mean and Standard deviation measure variables 
 
@@ -66,7 +66,7 @@ fBodyGyroJerkMag
 
 (cited from the source features_info.txt)
 
-Below are the variables that has the mean and standard deviation estimates from the above signals and they were further summarized in this dataset by each subject and activity combination.
+Below are the variables that has the mean and standard deviation estimates from the above signals and they were further summarized in this dataset by each subject and activity combination. These are all numeric data values between -1 and 1. They are measured wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometeard gravity units 'g'. So, the below measures have units as 'g'
 
 tBodyAcc.mean.X     
 tBodyAcc.mean.Y     
