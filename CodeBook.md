@@ -31,48 +31,78 @@ These signals were used to estimate variables of the feature vector for each pat
   
 activity             - Identifies the particular activity performed by the subject. It is a categorical variable. 
                        The values are WALKING,WALKING_UPSTAIRS,WALKING_DOWNSTAIRS,SITTING,STANDING,LAYING.  
+                       
 subjectID            - Identifies the subject who performed the particular activity for the measurement taken. 
                        The subjectid   takes values from 1 to 30
                        
-####tBodyAcc-XYZ and tGravityAcc-XYZ variables 
+####Mean and Standard deviation measure variables 
+
 The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise.
-the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
+the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz.
 
-tBodyAcc.mean.X      - Identifies the mean of tBodyAcc by each subject and activity for the X axis
-tBodyAcc.mean.Y      - Identifies the mean of tBodyAcc by each subject and activity for the Y axis
-tBodyAcc.mean.Z      - Identifies the mean of tBodyAcc by each subject and activity for the Z axis
-tBodyAcc.std.X       - Identifies the standard deviation of tBodyAcc by each subject and activity for the X axis
-tBodyAcc.std.Y       - Identifies the standard deviation of tBodyAcc by each subject and activity for the Y axis
-tBodyAcc.std.Z.      - Identifies the standard deviation of tBodyAcc by each subject and activity for the Y axis
-tGravityAcc.mean.X   - Identifies the mean of tGravityAcc by each subject and activity for the Y axis
-tGravityAcc.mean.Y   - Identifies the mean of tGravityAcc by each subject and activity for the Y axis
-tGravityAcc.mean.Z   - Identifies the mean of tGravityAcc by each subject and activity for the Z axis
-tGravityAcc.std.X    - Identifies the standard deviation of tGravityAcc by each subject and activity for the X axis
-tGravityAcc.std.Y    - Identifies the standard deviation of tGravityAcc by each subject and activity for the X axis
-tGravityAcc.std.Z.   - Identifies the standard deviation of tGravityAcc by each subject and activity for the X axis
+Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
 
-####tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ variables
-The body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ)
-tBodyAccJerk.mean.X  - Identifies mean by each subject and activity for the tBodyAccJerk-X signal
-tBodyAccJerk.mean.Y  - Identifies mean by each subject and activity for the tBodyAccJerk-X signal
-tBodyAccJerk.mean.Z  - Identifies mean by each subject and activity for the tBodyAccJerk-X signal
-tBodyAccJerk.std.X   - Identifies mean by each subject and activity for the tBodyGyroJerk-X signal
-tBodyAccJerk.std.Y   - Identifies mean by each subject and activity for the tBodyGyroJerk-Y signal
-tBodyAccJerk.std.Z   - Identifies mean by each subject and activity for the tBodyGyroJerk-Z signal 
+Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
 
+These signals were used to estimate variables of the feature vector for each pattern:  
+'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
+tBodyAcc-XYZ
+tGravityAcc-XYZ
+tBodyAccJerk-XYZ
+tBodyGyro-XYZ
+tBodyGyroJerk-XYZ
+tBodyAccMag
+tGravityAccMag
+tBodyAccJerkMag
+tBodyGyroMag
+tBodyGyroJerkMag
+fBodyAcc-XYZ
+fBodyAccJerk-XYZ
+fBodyGyro-XYZ
+fBodyAccMag
+fBodyAccJerkMag
+fBodyGyroMag
+fBodyGyroJerkMag
 
-tBodyGyro.mean.X     
+(cited from the source features_info.txt)
+
+Below are the variables that has the mean and standard deviation estimates from the above signals and they were further summarized in this dataset by each subject and activity combination.
+
+tBodyAcc.mean.X     
+tBodyAcc.mean.Y     
+tBodyAcc.mean.Z     
+tBodyAcc.std.X      
+tBodyAcc.std.Y      
+tBodyAcc.std.Z.   
+
+tGravityAcc.mean.X   
+tGravityAcc.mean.Y   
+tGravityAcc.mean.Z  
+tGravityAcc.std.X   
+tGravityAcc.std.Y    
+tGravityAcc.std.Z.   
+
+tBodyAccJerk.mean.X  
+tBodyAccJerk.mean.Y  
+tBodyAccJerk.mean.Z  
+tBodyAccJerk.std.X   
+tBodyAccJerk.std.Y   
+tBodyAccJerk.std.Z   
+
+tBodyGyro.mean.X 
 tBodyGyro.mean.Y
 tBodyGyro.mean.Z
-tBodyGyro.std.X        
-tBodyGyro.std.Y
+tBodyGyro.std.X    
+tBodyGyro.std.Y      
 tBodyGyro.std.Z
+
 tBodyGyroJerk.mean.X
 tBodyGyroJerk.mean.Y
 tBodyGyroJerk.mean.Z
 tBodyGyroJerk.std.X
 tBodyGyroJerk.std.Y
 tBodyGyroJerk.std.Z
+
 tBodyAccMag.mean..
 tBodyAccMag.std.
 tGravityAccMag.mean..
@@ -83,24 +113,28 @@ tBodyGyroMag.mean..
 tBodyGyroMag.std.    
 tBodyGyroJerkMag.mean..
 tBodyGyroJerkMag.std.
+
 fBodyAcc.mean.X
 fBodyAcc.mean.Y
 fBodyAcc.mean.Z
 fBodyAcc.std.X
 fBodyAcc.std.Y
 fBodyAcc.std.Z
+
 fBodyAccJerk.mean.X
 fBodyAccJerk.mean.Y
 fBodyAccJerk.mean.Z
 fBodyAccJerk.std.X
 fBodyAccJerk.std.Y
 fBodyAccJerk.std.Z
+
 fBodyGyro.mean.X
 fBodyGyro.mean.Y
 fBodyGyro.mean.Z
 fBodyGyro.std.X
 fBodyGyro.std.Y
 fBodyGyro.std.Z
+
 fBodyAccMag.mean..
 fBodyAccMag.std.
 fBodyAccJerkMag.mean..
